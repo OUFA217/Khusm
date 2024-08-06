@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SplashCubit, SplashStates>(builder: (context, state) {
-      BlocProvider.of<SplashCubit>(context).navigateToHome(context);
+      BlocProvider.of<SplashCubit>(context).navigateToLogin(context);
       return Scaffold(
         body: SizedBox(
           height: MediaQuery.of(context).size.height,
