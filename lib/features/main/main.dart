@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         var cubit = MainCubit.get(context);
 
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           locale: Locale(cubit.lang),
           localizationsDelegates: const [
             S.delegate,
