@@ -11,40 +11,42 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SplashCubit, SplashStates>(builder: (context, state) {
-      BlocProvider.of<SplashCubit>(context).navigateToLogin(context);
-      return Scaffold(
-        body: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 1500),
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Color(0xFF2caca3),
-                  Color(0xFF202020),
+    return BlocProvider(
+      create: (context) => SplashCubit()..navigateToLogin(context),
+      child: BlocBuilder<SplashCubit, SplashStates>(builder: (context, state) {
+        return Scaffold(
+          body: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 1500),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xFF2caca3),
+                    Color(0xFF202020),
+                  ],
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Hero(
+                    tag: 'logo',
+                    child: SvgPicture.asset(
+                      'assets/images/Khusm.svg',
+                      width: 260,
+                    ),
+                  ),
                 ],
               ),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Hero(
-                  tag: 'logo',
-                  child: SvgPicture.asset(
-                    'assets/images/Khusm.svg',
-                    width: 260,
-                  ),
-                ),
-              ],
-            ),
           ),
-        ),
-      );
-    });
+        );
+      }),
+    );
   }
 }

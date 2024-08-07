@@ -1,4 +1,7 @@
 {
-    "Khusm":"Khusm"
+    "Khusm":"Khusm",
+
+    "Login":"تسجيل الدخول",
+    "WeWillSendYouVerificationCode":"سوف نقوم بارسال رمز التحقق لك"
 
 }

@@ -17,7 +17,7 @@ class SplashCubit extends Cubit<SplashStates> {
 
   void navigateToLogin(context) {
     Future.delayed(const Duration(seconds: 3), () {
-      navigateTo(context, const LoginScreen());
+      navigateAndFinish(context, const LoginScreen());
     });
   }
 }

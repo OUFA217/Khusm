@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:khusm/features/login/di/dependency_injection.dart';
+import 'package:khusm/features/login/presentation/viewmodel/Bloc/cubit.dart';
 import 'package:khusm/features/main/cubit/cubit.dart';
 import 'package:khusm/features/main/cubit/states.dart';
 import 'package:khusm/features/splash/view/splash_screen.dart';
-import 'package:khusm/features/splash/viewmodel/cubit.dart';
 import 'package:khusm/generated/l10n.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<LoginCubit>(
+            create: (context) => sl<LoginCubit>()..loadCountries()),
         BlocProvider<MainCubit>(create: (context) => MainCubit()),
-        BlocProvider<SplashCubit>(create: (context) => SplashCubit()),
       ],
       child: BlocBuilder<MainCubit, MainStates>(builder: (context, state) {
         var cubit = MainCubit.get(context);

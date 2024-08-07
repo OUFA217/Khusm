@@ -59,6 +59,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Log in`
+  String get Login {
+    return Intl.message(
+      'Log in',
+      name: 'Login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We'll send you an SMS for verification`
+  String get WeWillSendYouVerificationCode {
+    return Intl.message(
+      'We\'ll send you an SMS for verification',
+      name: 'WeWillSendYouVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
