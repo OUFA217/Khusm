@@ -3,8 +3,8 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
-import 'package:khusm/features/login/domain/entities/country_entitie.dart';
-import 'package:khusm/features/login/domain/usecases/country_usecase.dart';
+import 'package:khusm/features/signup/domain/entities/country_entitie.dart';
+import 'package:khusm/features/signup/domain/usecases/country_usecase.dart';
 
 class CountryRepositoryImpl implements LoadCountries {
   @override

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-AppBar loginAppBar() {
+AppBar signUpAppBar() {
   return AppBar(
+    backgroundColor: Colors.white,
     centerTitle: true,
     title: SvgPicture.asset(
       "assets/images/Khusm.svg",

@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khusm/core/routes/page_generator.dart';
 import 'package:khusm/features/home/presentation/view/home_screen.dart';
-import 'package:khusm/features/login/presentation/view/login_screen.dart';
+import 'package:khusm/features/signup/presentation/view/sign_up.dart';
 import 'package:khusm/features/splash/viewmodel/states.dart';
 
 class SplashCubit extends Cubit<SplashStates> {
@@ -15,9 +15,9 @@ class SplashCubit extends Cubit<SplashStates> {
     });
   }
 
-  void navigateToLogin(context) {
+  void navigateToSignUp(context) {
     Future.delayed(const Duration(seconds: 3), () {
-      navigateAndFinish(context, const LoginScreen());
+      navigateAndFinish(context, const SignUpScreen());
     });
   }
 }
